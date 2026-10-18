@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Conheça o Onda Gastronomia: buffet livre, carnes grelhadas, saladas e sobremesas. Consulte os valores e solicite sua reserva.">
+  <meta name="theme-color" content="#0D0D0D">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Onda Gastronomia | Buffet Livre">
+  <meta property="og:description" content="Variedade artesanal, carnes grelhadas, saladas e sobremesas. Solicite sua reserva.">
+  <title>Onda Gastronomia | Buffet Livre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root{--primary-color:#C8102E;--primary-hover:#A00B23;--accent-gold:#D4AF37;--accent-orange:#FF6B00;--bg-dark:#0D0D0D;--bg-card:#181818;--text-light:#F8F9FA;--text-muted:#BDBDBD;--border-color:#333;--font-heading:'Playfair Display',Georgia,serif;--font-body:'Outfit',Arial,sans-serif;--transition:all .25s ease}
+    *{box-sizing:border-box;scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+    body{margin:0;font-family:var(--font-body);background:var(--bg-dark);color:var(--text-light);line-height:1.6;overflow-x:hidden;padding-bottom:12px}
+    img{display:block;max-width:100%}a{color:inherit}button,input,select{font:inherit}
+    :focus-visible{outline:3px solid var(--accent-gold);outline-offset:3px}
+    .container{width:min(92%,1200px);margin:0 auto;padding:0 10px}
+    .section-padding{padding:90px 0 60px;scroll-margin-top:80px}
+    .section-title{text-align:center;margin:0 0 45px}
+    .section-title h2{font-family:var(--font-heading);font-size:clamp(2rem,5vw,3rem);color:var(--accent-gold);margin:0 0 12px}
+    .section-title p{color:var(--text-muted);font-size:clamp(.95rem,3vw,1.1rem);max-width:600px;margin:auto}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:50px;font-weight:700;text-decoration:none;cursor:pointer;border:0;transition:var(--transition);font-size:1rem;touch-action:manipulation}
+    .btn-primary{background:linear-gradient(135deg,var(--primary-color),#800000);color:white;box-shadow:0 6px 20px #c8102e44}
+    .btn-accent{background:linear-gradient(135deg,var(--accent-gold),#B8860B);color:#000;box-shadow:0 6px 20px #d4af3733}
+    .btn:hover{transform:translateY(-2px)}
+    header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:#0d0d0df2;backdrop-filter:blur(12px);border-bottom:1px solid #d4af3726}
+    .navbar{display:flex;justify-content:space-between;align-items:center;min-height:75px}
+    .logo{font-family:var(--font-heading);font-size:1.4rem;font-weight:800;color:var(--text-light);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+    .logo i{color:var(--primary-color)}.logo span{color:var(--accent-gold)}
+    .nav-menu{display:flex;list-style:none;gap:20px;align-items:center;margin:0;padding:0}
+    .nav-link{color:var(--text-light);text-decoration:none;font-weight:600;transition:var(--transition);font-size:.95rem}
+    .nav-link:hover{color:var(--accent-gold)}
+    .hamburger{display:none;cursor:pointer;font-size:1.35rem;color:var(--text-light);padding:10px;background:transparent;border:1px solid var(--border-color);border-radius:10px}
+    .hero{min-height:100svh;background:linear-gradient(to bottom,#0009 0%,#0d0d0df2 100%),url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;padding:115px 0 50px}
+    .hero-content h1{font-family:var(--font-heading);font-size:clamp(2.4rem,6vw,4.2rem);margin:0 0 20px;line-height:1.15;font-weight:800}
+    .hero-content h1 span{background:linear-gradient(135deg,var(--accent-gold),var(--accent-orange));-webkit-background-clip:text;background-clip:text;color:var(--accent-gold);-webkit-text-fill-color:transparent}
+    .hero-content p{font-size:clamp(1rem,3.5vw,1.25rem);max-width:720px;margin:0 auto 35px;color:#e0e0e0;font-weight:300}
+    .hero-buttons{display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+    .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:25px}
+    .pricing-card{background:var(--bg-card);border-radius:18px;padding:35px 25px;border:1px solid var(--border-color);text-align:center;position:relative;transition:var(--transition);display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+    .pricing-card:hover{transform:translateY(-5px);border-color:var(--accent-gold)}
+    .pricing-card.featured{border:2px solid var(--accent-gold);background:linear-gradient(180deg,#d4af3714,var(--bg-card))}
+    .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--accent-gold),var(--accent-orange));color:#000;padding:4px 16px;border-radius:20px;font-size:.75rem;font-weight:800;text-transform:uppercase;white-space:nowrap}
+    .pricing-card h3{font-size:1.4rem;margin:0 0 10px}.price{font-size:2.8rem;font-weight:800;color:var(--accent-gold);margin:0 0 20px;display:flex;align-items:baseline;justify-content:center;gap:2px}.price span{font-size:1rem;color:var(--text-muted);font-weight:400}
+    .pricing-features{list-style:none;margin:0 0 25px;padding:0;text-align:left}.pricing-features li{padding:10px 0;color:#ddd;display:flex;align-items:center;gap:10px;font-size:.95rem;border-bottom:1px dashed #ffffff0d}.pricing-features li i{color:var(--accent-gold)}
+    .menu-tabs{display:flex;justify-content:center;gap:10px;margin-bottom:35px;flex-wrap:wrap}
+    .tab-btn{background:var(--bg-card);color:var(--text-light);border:1px solid var(--border-color);padding:10px 20px;border-radius:30px;cursor:pointer;font-weight:600;transition:var(--transition);font-size:.9rem}
+    .tab-btn.active,.tab-btn:hover{background:var(--primary-color);border-color:var(--primary-color);color:#fff}
+    .menu-content{display:none;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:25px}.menu-content.active{display:grid}
+    .menu-item{background:var(--bg-card);border-radius:16px;overflow:hidden;border:1px solid var(--border-color);transition:var(--transition)}.menu-item:hover{transform:translateY(-3px);border-color:var(--accent-gold)}
+    .menu-item img{width:100%;aspect-ratio:16/10;object-fit:cover;background:#222}.menu-item-info{padding:20px}.menu-item-info h3{font-size:1.2rem;color:var(--accent-gold);margin:0 0 8px}.menu-item-info p{font-size:.9rem;color:var(--text-muted);margin:0}
+    .reservation-wrapper{background:linear-gradient(135deg,#181818f2,#0d0d0df5),url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;border-radius:24px;padding:40px 25px;border:1px solid var(--border-color);box-shadow:0 20px 50px #0008}
+    .reservation-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.reservation-text h2{font-family:var(--font-heading);font-size:2.2rem;color:var(--accent-gold);margin:0 0 15px}.reservation-text>p{color:var(--text-muted);margin:0 0 25px}
+    .info-item{display:flex;align-items:center;gap:15px;margin-bottom:15px}.info-item>i{flex:0 0 40px;width:40px;height:40px;background:#d4af371a;color:var(--accent-gold);border-radius:50%;display:grid;place-items:center;font-size:1.1rem}
+    .form-group{margin-bottom:18px}.form-group label{display:block;margin-bottom:6px;font-weight:600;font-size:.9rem}.form-control{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border-color);background:#121212;color:var(--text-light);font-family:var(--font-body);font-size:1rem;min-height:46px}
+    .form-control:focus{outline:2px solid var(--accent-gold);outline-offset:1px;border-color:var(--accent-gold)}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-note{color:var(--text-muted);font-size:.85rem;margin:12px 0 0}.status-message{display:none;margin:12px 0 0;padding:12px;border-radius:8px;background:#202020;color:#fff}.status-message.show{display:block}
+    .faq-container{max-width:800px;margin:auto}.faq-item{background:var(--bg-card);border-radius:12px;margin-bottom:12px;border:1px solid var(--border-color);overflow:hidden}
+    .faq-question{width:100%;text-align:left;background:transparent;color:var(--text-light);padding:18px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px;font-weight:600;font-size:1rem;border:0}
+    .faq-question i{transition:transform .25s;color:var(--accent-gold);flex-shrink:0}.faq-answer{color:var(--text-muted);font-size:.95rem;padding:0 20px 18px}.faq-answer[hidden]{display:none}.faq-answer p{margin:0}.faq-item.active .faq-question i{transform:rotate(180deg)}
+    footer{background:#080808;border-top:1px solid var(--border-color);padding:60px 0 25px}.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:35px;margin-bottom:40px}.footer-col h2,.footer-col h3{font-family:var(--font-heading);color:var(--accent-gold);font-size:1.25rem;margin:0 0 18px}.footer-col p,.footer-col li{color:var(--text-muted);font-size:.9rem;margin:0 0 10px;list-style:none}.social-links{display:flex;gap:12px;margin-top:15px}.social-links a{color:var(--text-light);background:var(--bg-card);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;text-decoration:none}.social-links a:hover{background:var(--accent-gold);color:#000}.footer-bottom{text-align:center;padding-top:25px;border-top:1px solid #ffffff0d;color:var(--text-muted);font-size:.8rem}
+    .whatsapp-float{position:fixed;bottom:20px;right:20px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;box-shadow:0 6px 20px #0008;z-index:999;text-decoration:none;transition:var(--transition)}.whatsapp-float:hover{transform:scale(1.06)}
+    .notice{font-size:.85rem;color:var(--text-muted);border-left:3px solid var(--accent-gold);padding:10px 12px;margin-top:20px}
+    @media(max-width:992px){.reservation-grid{grid-template-columns:1fr}}
+    @media(max-width:768px){.hamburger{display:inline-grid;place-items:center}.nav-menu{position:fixed;top:75px;left:0;right:0;width:100%;height:calc(100dvh - 75px);background:#0d0d0dfc;display:flex;flex-direction:column;justify-content:center;gap:25px;padding:24px;visibility:hidden;opacity:0;pointer-events:none;transition:opacity .25s ease,visibility .25s ease}.nav-menu.active{visibility:visible;opacity:1;pointer-events:auto}.nav-link{font-size:1.15rem}.nav-menu .btn{min-height:44px}.form-row{grid-template-columns:1fr}.reservation-wrapper{padding:25px 15px}.section-padding{padding:65px 0 40px}.hero{min-height:90svh}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container navbar">
+    <a href="#inicio" class="logo" aria-label="Onda Gastronomia, início"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Onda & <span>Gastronomia</span></a>
+    <button class="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    <nav aria-label="Navegação principal">
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#inicio" class="nav-link">Início</a></li><li><a href="#precos" class="nav-link">Preços</a></li><li><a href="#cardapio" class="nav-link">Buffet</a></li><li><a href="#agendamento" class="nav-link">Reserva</a></li><li><a href="#faq" class="nav-link">Dúvidas</a></li><li><a href="#contato" class="nav-link">Localização</a></li>
+        <li><a href="https://wa.me/5513981852816?text=Ol%C3%A1%21%20Gostaria%20de%20tirar%20uma%20d%C3%BAvida." target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-contact"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main>
+<section id="inicio" class="hero">
+  <div class="container"><div class="hero-content">
+    <h1>Coma à Vontade no Melhor <span>Buffet Livre</span> da Cidade</h1>
+    <p>Variedade artesanal de pratos quentes, churrasco gourmet, saladas crocantes e sobremesas tentadoras. Um preço único, sabor ilimitado.</p>
+    <div class="hero-buttons"><a href="#agendamento" class="btn btn-accent"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Solicitar reserva</a><a href="#precos" class="btn btn-primary"><i class="fa-solid fa-tag" aria-hidden="true"></i> Ver valores</a></div>
+  </div></div>
+</section>
+<section id="precos" class="section-padding">
+  <div class="container"><div class="section-title"><h2>Valores do Buffet</h2><p>Transparência e o melhor custo-benefício para a sua refeição</p></div>
+    <div class="pricing-grid">
+      <article class="pricing-card"><div><h3>Almoço durante a semana</h3><p style="color:var(--text-muted);margin-bottom:15px;font-size:.85rem">Segunda a sexta-feira (exceto feriados)</p><p class="price">R\$ 39<span>,90</span></p><ul class="pricing-features"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Buffet quente completo</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Bar de saladas selecionadas</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Carnes grelhadas na hora</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Sobremesas inclusas</li></ul></div><a href="#agendamento" class="btn btn-primary">Solicitar reserva</a></article>
+      <article class="pricing-card featured"><span class="badge">Mais procurado</span><div><h3>Fim de semana e feriados</h3><p style="color:var(--text-muted);margin-bottom:15px;font-size:.85rem">Sábados, domingos e feriados</p><p class="price">R\$ 59<span>,90</span></p><ul class="pricing-features"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Rodízio e buffet premium</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Cortes nobres de carnes</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Ilha de frutos do mar e massas</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Mesa completa de sobremesas</li></ul></div><a href="#agendamento" class="btn btn-accent">Solicitar reserva</a></article>
+      <article class="pricing-card"><div><h3>Menu infantil</h3><p style="color:var(--text-muted);margin-bottom:15px;font-size:.85rem">Valores especiais para crianças</p><p class="price">R\$ 24<span>,90</span></p><ul class="pricing-features"><li><i class="fa-solid fa-check" aria-hidden="true"></i> Crianças de 6 a 10 anos</li><li><i class="fa-solid fa-star" aria-hidden="true"></i> <strong>Até 5 anos grátis*</strong></li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Espaço kids incluso*</li><li><i class="fa-solid fa-check" aria-hidden="true"></i> Menu infantil*</li></ul></div><a href="#agendamento" class="btn btn-primary">Solicitar reserva</a></article>
+    </div>
+    <p class="notice">Atenção: confirme os preços, as regras infantis, os itens inclusos e a disponibilidade antes de publicar. Itens marcados com * precisam de validação pelo restaurante.</p>
+  </div>
+</section>
+<section id="cardapio" class="section-padding" style="background:#121212">
+  <div class="container"><div class="section-title"><h2>Destaques do Buffet</h2><p>Um aroma irresistível e opções para agradar todos os paladares</p></div>
+    <div class="menu-tabs" role="tablist" aria-label="Categorias do cardápio">
+      <button class="tab-btn active" id="tab-carnes" role="tab" aria-selected="true" aria-controls="carnes" tabindex="0" data-menu="carnes">Carnes & Grelhados</button>
+      <button class="tab-btn" id="tab-quentes" role="tab" aria-selected="false" aria-controls="quentes" tabindex="-1" data-menu="quentes">Pratos quentes</button>
+      <button class="tab-btn" id="tab-saladas" role="tab" aria-selected="false" aria-controls="saladas" tabindex="-1" data-menu="saladas">Saladas & Frios</button>
+      <button class="tab-btn" id="tab-sobremesas" role="tab" aria-selected="false" aria-controls="sobremesas" tabindex="-1" data-menu="sobremesas">Sobremesas</button>
+    </div>
+    <div id="carnes" class="menu-content active" role="tabpanel" aria-labelledby="tab-carnes">
+      <article class="menu-item"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Carne grelhada servida em uma tábua" width="600" height="375" fetchpriority="low" loading="lazy"><div class="menu-item-info"><h3>Picanha no alho e sal grosso</h3><p>Corte macio, suculento e fatiado no ponto de sua preferência.</p></div></article>
+      <article class="menu-item"><img src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80" alt="Carnes preparadas na churrasqueira" width="600" height="375" loading="lazy"><div class="menu-item-info"><h3>Costela de chão</h3><p>Assada lentamente para ficar macia e saborosa.</p></div></article>
+    </div>
+    <div id="quentes" class="menu-content" role="tabpanel" aria-labelledby="tab-quentes" hidden>
+      <article class="menu-item"><img src="https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80" alt="Prato de comida quente" width="600" height="375" loading="lazy"><div class="menu-item-info"><h3>Feijoada completa</h3><p>Servida com acompanhamentos tradicionais. Confirme a disponibilidade do dia.</p></div></article>
+      <article class="menu-item"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80" alt="Prato de massa com molho" width="600" height="375" loading="lazy"><div class="menu-item-info"><h3>Massas e molhos especiais</h3><p>Massas servidas com molhos variados, conforme o cardápio do dia.</p></div></article>
+    </div>
+    <div id="saladas" class="menu-content" role="tabpanel" aria-labelledby="tab-saladas" hidden>
+      <article class="menu-item"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Salada fresca com vegetais variados" width="600" height="375" loading="lazy"><div class="menu-item-info"><h3>Mesa de saladas</h3><p>Opções frescas e acompanhamentos. Consulte a variedade disponível no dia.</p></div></article>
+    </div>
+    <div id="sobremesas" class="menu-content" role="tabpanel" aria-labelledby="tab-sobremesas" hidden>
+      <article class="menu-item"><img src="https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=600&q=80" alt="Sobremesa doce servida em prato" width="600" height="375" loading="lazy"><div class="menu-item-info"><h3>Doces da casa</h3><p>Uma seleção de sobremesas; confirme os itens inclusos no buffet.</p></div></article>
+    </div>
+  </div>
+</section>
+<section id="agendamento" class="section-padding">
+  <div class="container"><div class="reservation-wrapper"><div class="reservation-grid">
+    <div class="reservation-text"><h2>Solicite sua mesa</h2><p>Preencha os dados para montar uma solicitação de reserva. A reserva só estará confirmada após o retorno do restaurante pelo WhatsApp.</p>
+      <div class="info-item"><i class="fa-solid fa-bolt" aria-hidden="true"></i><div><strong>Contato rápido</strong><p style="font-size:.85rem;color:var(--text-muted);margin:0">A solicitação será aberta no WhatsApp</p></div></div>
+      <div class="info-item"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i><div><strong>Aniversários e grupos</strong><p style="font-size:.85rem;color:var(--text-muted);margin:0">Informe os detalhes nas observações</p></div></div>
+    </div>
+    <form id="whatsappForm">
+      <div class="form-group"><label for="nome">Nome completo *</label><input type="text" id="nome" name="nome" class="form-control" placeholder="Digite seu nome" autocomplete="name" maxlength="100" required></div>
+      <div class="form-row">
+        <div class="form-group"><label for="telefone">Seu WhatsApp / celular *</label><input type="tel" id="telefone" name="telefone" class="form-control" placeholder="(00) 90000-0000" autocomplete="tel" inputmode="tel" maxlength="25" required></div>
+        <div class="form-group"><label for="pessoas">Número de pessoas *</label><select id="pessoas" name="pessoas" class="form-control" required><option value="1 a 2 pessoas">1 a 2 pessoas</option><option value="3 a 5 pessoas">3 a 5 pessoas</option><option value="6 a 10 pessoas">6 a 10 pessoas</option><option value="Mais de 10 pessoas">Mais de 10 pessoas (grupo)</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label for="data">Data desejada *</label><input type="date" id="data" name="data" class="form-control" required></div>
+        <div class="form-group"><label for="horario">Horário desejado *</label><input type="time" id="horario" name="horario" class="form-control" required></div>
+      </div>
+      <div class="form-group"><label for="obs">Observações (opcional)</label><input type="text" id="obs" name="obs" class="form-control" placeholder="Ex.: aniversário ou cadeira de bebê" maxlength="500"></div>
+      <button type="submit" class="btn btn-accent" style="width:100%;border-radius:12px;margin-top:10px"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Preparar solicitação no WhatsApp</button>
+      <p class="form-note">Seus dados serão incluídos na mensagem que você poderá revisar antes de enviar. O restaurante ainda precisa confirmar a disponibilidade.</p>
+      <p id="formStatus" class="status-message" role="status" aria-live="polite"></p>
+    </form>
+  </div></div></div>
+</section>
+<section id="faq" class="section-padding" style="background:#121212">
+  <div class="container"><div class="section-title"><h2>Perguntas frequentes</h2><p>Informações úteis antes de nos visitar</p></div>
+    <div class="faq-container">
+      <article class="faq-item"><h3 style="margin:0"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a1"><span>As bebidas e sobremesas estão inclusas no valor?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-a1" hidden><p>As sobremesas e bebidas podem variar conforme o plano. Confirme com o restaurante quais itens estão incluídos e quais são cobrados à parte.</p></div></article>
+      <article class="faq-item"><h3 style="margin:0"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a2"><span>Aniversariante do dia tem benefício?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-a2" hidden><p>Consulte previamente as condições, a quantidade mínima de acompanhantes e os documentos necessários para o benefício.</p></div></article>
+      <article class="faq-item"><h3 style="margin:0"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a3"><span>Quais formas de pagamento são aceitas?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-a3" hidden><p>Confirme com o restaurante quais cartões, vales-refeição e opções de pagamento estão disponíveis.</p></div></article>
+      <article class="faq-item"><h3 style="margin:0"><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-a4"><span>A taxa de serviço é obrigatória?</span><i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button></h3><div class="faq-answer" id="faq-a4" hidden><p>Peça ao estabelecimento que informe previamente se há taxa de serviço e quais são as condições aplicáveis.</p></div></article>
+    </div>
+  </div>
+</section>
+</main>
+<footer id="contato" class="section-padding">
+  <div class="container"><div class="footer-grid">
+    <div class="footer-col"><a href="#inicio" class="logo" style="margin-bottom:15px"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Onda & <span>Gastronomia</span></a><p>Comida boa, variedade e atendimento acolhedor. Venha conhecer nossa proposta gastronômica.</p><div class="social-links" aria-label="Redes sociais e pedidos">
+        <a href="https://www.instagram.com/ondagastronomiapizzaria/" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Onda Gastronomia" title="Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/people/Onda-Gastronomia-Pizzaria/61585473756407/?ref=pl_edit_xav_ig_profile_page_web" target="_blank" rel="noopener noreferrer" aria-label="Facebook da Onda Gastronomia" title="Facebook">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.ifood.com.br/delivery/sao-vicente-sp/onda-gastronomia-itarare/91f9853f-95ce-4e17-b36f-ced716a73403" target="_blank" rel="noopener noreferrer" aria-label="Peça pelo iFood na Onda Gastronomia" title="Peça pelo iFood">
+          <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+        </a>
+      </div></div>
+    <div class="footer-col"><h2>Horários de funcionamento</h2><p><strong>Almoço:</strong> Seg a Dom | 11h00 às 15h00*</p><p><strong>Jantar:</strong> Ter a Dom | 18h00 às 23h00*</p><p style="font-size:.8rem">*Horários ilustrativos: confirme antes de publicar.</p></div>
+    <div class="footer-col"><h2>Onde estamos</h2><p><i class="fa-solid fa-location-dot" style="color:var(--accent-gold)" aria-hidden="true"></i> R. 11 de Junho, 209 - Boa Vista, 11320-160</p><p>São Vicente - SP</p><p><i class="fa-solid fa-square-parking" style="color:var(--accent-gold)" aria-hidden="true"></i> Estacionamento: consulte disponibilidade.</p><p style="font-size:.8rem">Endereço e estacionamento precisam ser confirmados pelo estabelecimento.</p></div>
+  </div><div class="footer-bottom"><p>© <span id="currentYear">2026</span> Restaurante Onda Gastronomia. Todos os direitos reservados.</p></div></div>
+</footer>
+<a href="https://wa.me/5513981852816?text=Ol%C3%A1%21%20Gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale com o restaurante pelo WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+<script>
+  const RESTAURANT_PHONE = "5513981852816";
+  const phoneIsPlaceholder = !RESTAURANT_PHONE || /(\d)\1{5,}/.test(RESTAURANT_PHONE);
+
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('.nav-menu');
+  const menuIcon = hamburger.querySelector('i');
+
+  function setMenu(open) {
+    navMenu.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    menuIcon.classList.toggle('fa-bars', !open);
+    menuIcon.classList.toggle('fa-xmark', open);
+    document.body.style.overflow = open && window.matchMedia('(max-width: 768px)').matches ? 'hidden' : '';
+  }
+  hamburger.addEventListener('click', () => setMenu(hamburger.getAttribute('aria-expanded') !== 'true'));
+  document.querySelectorAll('.nav-link, .nav-contact').forEach(link => link.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 768) setMenu(false); });
+
+  const tabButtons = [...document.querySelectorAll('[role="tab"]')];
+  function activateTab(button, moveFocus = false) {
+    tabButtons.forEach(tab => {
+      const selected = tab === button;
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('aria-selected', String(selected));
+      tab.tabIndex = selected ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.hidden = !selected;
+      panel.classList.toggle('active', selected);
+    });
+    if (moveFocus) button.focus();
+  }
+  tabButtons.forEach((button, index) => {
+    button.addEventListener('click', () => activateTab(button));
+    button.addEventListener('keydown', event => {
+      let next = index;
+      if (event.key === 'ArrowRight') next = (index + 1) % tabButtons.length;
+      else if (event.key === 'ArrowLeft') next = (index - 1 + tabButtons.length) % tabButtons.length;
+      else if (event.key === 'Home') next = 0;
+      else if (event.key === 'End') next = tabButtons.length - 1;
+      else return;
+      event.preventDefault();
+      activateTab(tabButtons[next], true);
+    });
+  });
+
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const willOpen = button.getAttribute('aria-expanded') !== 'true';
+      document.querySelectorAll('.faq-question').forEach(other => {
+        other.setAttribute('aria-expanded', 'false');
+        document.getElementById(other.getAttribute('aria-controls')).hidden = true;
+        other.closest('.faq-item').classList.remove('active');
+      });
+      if (willOpen) {
+        button.setAttribute('aria-expanded', 'true');
+        document.getElementById(button.getAttribute('aria-controls')).hidden = false;
+        button.closest('.faq-item').classList.add('active');
+      }
+    });
+  });
+
+  const dateField = document.getElementById('data');
+  function localDateString(date) {
+    return `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
+  }
+  dateField.min = localDateString(new Date());
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  const form = document.getElementById('whatsappForm');
+  const status = document.getElementById('formStatus');
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    status.classList.remove('show');
+    if (!form.reportValidity()) return;
+
+    const nome = document.getElementById('nome').value.trim();
+    const telefone = document.getElementById('telefone').value.trim();
+    const pessoas = document.getElementById('pessoas').value;
+    const data = dateField.value;
+    const horario = document.getElementById('horario').value;
+    const obs = document.getElementById('obs').value.trim();
+
+    if (nome.length < 2) {
+      status.textContent = 'Informe seu nome completo para continuar.';
+      status.classList.add('show');
+      document.getElementById('nome').focus();
+      return;
+    }
+    if (!data || data < localDateString(new Date())) {
+      status.textContent = 'Escolha a data de hoje ou uma data futura.';
+      status.classList.add('show');
+      dateField.focus();
+      return;
+    }
+    if (!/^\d{2}:\d{2}\$/.test(horario)) {
+      status.textContent = 'Informe um horário válido.';
+      status.classList.add('show');
+      document.getElementById('horario').focus();
+      return;
+    }
+    if (!/^\d{10,15}\$/.test(RESTAURANT_PHONE)) {
+      status.textContent = 'O WhatsApp do restaurante ainda não foi configurado corretamente. Entre em contato por outro canal.';
+      status.classList.add('show');
+      return;
+    }
+
+    const [ano, mes, dia] = data.split('-');
+    const linhas = [
+      '*SOLICITAÇÃO DE RESERVA — Onda Gastronomia*',
+      '',
+      `*Nome:* ${nome}`,
+      `*Telefone do cliente:* ${telefone}`,
+      `*Quantidade:* ${pessoas}`,
+      `*Data desejada:* ${dia}/${mes}/${ano}`,
+      `*Horário desejado:* ${horario}`,
+      obs ? `*Observações:* ${obs}` : '',
+      '',
+      'Esta é uma solicitação de reserva e aguardo confirmação de disponibilidade.'
+    ].filter(Boolean);
+    const url = `https://wa.me/${RESTAURANT_PHONE}?text=${encodeURIComponent(linhas.join('\n'))}`;
+    const opened = window.open(url, '_blank', 'noopener,noreferrer');
+    if (!opened) window.location.href = url;
+    status.textContent = 'A solicitação foi preparada. Revise a mensagem no WhatsApp e toque em Enviar; a reserva só será confirmada após resposta do restaurante.';
+    status.classList.add('show');
+  });
+</script>
+</body>
+</html>
